@@ -8,6 +8,15 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+        # Check-out repository under GitHub workspace
+      - uses: actions/checkout@v2
+        # Step's name
+      - name: Setup PHP
+        # Action gives to setup the PHP environment to test application
+        uses: shivammathur/setup-php@v2
+        with:
+          # Specify the PHP version
+          php-version: '7.4'
       - name: Linter check
         run: make lint
       - name: Install

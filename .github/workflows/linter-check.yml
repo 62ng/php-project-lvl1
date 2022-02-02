@@ -10,3 +10,6 @@ jobs:
     steps:
       - name: Linter check
         run: make lint
+      - name: Install
+        # Install project
+        run: make install

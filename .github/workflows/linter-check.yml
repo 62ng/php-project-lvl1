@@ -11,5 +11,5 @@ jobs:
       - name: Linter check
         run: make lint
       - name: Install
-        # Install project
+        # Install project (Composer)
         run: make install

@@ -8,6 +8,7 @@
     ],
     "description": "hexlet project 1",
     "license": "MIT",
+    "minimum-stability": "dev",
 	"autoload": {
 		"psr-4": {
 			"Php\\Package\\": "src"

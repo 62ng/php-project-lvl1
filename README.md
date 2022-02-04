@@ -4,3 +4,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 ### Linter check:
 [![Actions Status](https://github.com/62ng/php-project-lvl1/workflows/linter-check/badge.svg)](https://github.com/62ng/php-project-lvl1/actions)
+
+### Asciinema "make install && make brain-even"
+https://asciinema.org/a/AT7XkVom0cyChS4TlvoaBbe6Y
+### Asciinema "composer require && brain-even"
+https://asciinema.org/a/1LgDYFdngNVaam6YgzCbgUlZK

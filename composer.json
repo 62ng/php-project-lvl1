@@ -6,7 +6,7 @@
             "email": "internet.buro@gmail.com"
         }
     ],
-    "description": "hexlet project 1",
+    "description": "hexlet project 1.0",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,

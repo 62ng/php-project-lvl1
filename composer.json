@@ -1,5 +1,5 @@
 {
-    "name": "hexlet/code",
+    "name": "62ng/php-project-lvl1",
     "authors": [
         {
             "name": "Andrey Frolov",
@@ -9,6 +9,7 @@
     "description": "hexlet project 1",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
 	"autoload": {
 		"psr-4": {
 			"Php\\Package\\": "src"

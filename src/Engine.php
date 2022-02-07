@@ -18,9 +18,9 @@ use function cli\prompt;
 
 /**
  * Print the Essence of the game.
- *  
+ *
  * @param string $essence The Essence of the game to print.
- * 
+ *
  * @return void
  **/
 function printGameEssence($essence)
@@ -30,7 +30,7 @@ function printGameEssence($essence)
 
 /**
  * Get the name of the gamer.
- *  
+ *
  * @return string
  **/
 function getName(): string
@@ -44,7 +44,7 @@ function getName(): string
 
 /**
  * Get the random num.
- *  
+ *
  * @return int
  **/
 function randomNum(): int
@@ -57,9 +57,9 @@ function randomNum(): int
 
 /**
  * Get the random element of the array.
- *  
+ *
  * @param array $arr Array of elements.
- * 
+ *
  * @return string
  **/
 function randomArrayElement(array $arr): string
@@ -75,9 +75,9 @@ function randomArrayElement(array $arr): string
 
 /**
  * Get the answer of gamer.
- *  
+ *
  * @param string $question Question text.
- * 
+ *
  * @return string
  **/
 function getAnswer(string $question): string
@@ -88,7 +88,7 @@ function getAnswer(string $question): string
 
 /**
  * Print msg if answer was correct.
- *  
+ *
  * @return void
  **/
 function printCorrect()
@@ -98,11 +98,11 @@ function printCorrect()
 
 /**
  * Print msg if answer was wrong.
- *  
+ *
  * @param string $userName      Gamer's name.
  * @param string $userAnswer    Gamer's answer.
  * @param string $correctAnswer Correct answer.
- * 
+ *
  * @return void
  **/
 function printWrong($userName, $userAnswer, $correctAnswer)
@@ -117,9 +117,9 @@ function printWrong($userName, $userAnswer, $correctAnswer)
 
 /**
  * Congratulate if the game is won.
- *  
+ *
  * @param string $userName Gamer's name.
- * 
+ *
  * @return void
  **/
 function congratulate($userName)

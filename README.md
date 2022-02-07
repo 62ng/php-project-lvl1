@@ -9,3 +9,5 @@
 https://asciinema.org/a/AT7XkVom0cyChS4TlvoaBbe6Y
 ### Asciinema "composer require && brain-even"
 https://asciinema.org/a/1LgDYFdngNVaam6YgzCbgUlZK
+### Asciinema "make brain-calc"
+https://asciinema.org/a/CzHPkx9eT6Qbkt8m3VXvSEnrK

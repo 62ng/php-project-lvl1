@@ -15,7 +15,6 @@
 			"Php\\Package\\": "src"
 		},
 		"files": [
-			"src/Cli.php",
 			"src/Engine.php"
 		]
 	},

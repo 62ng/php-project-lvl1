@@ -28,13 +28,24 @@ use function Brain\Games\Engine\printWrong;
 use function Brain\Games\Engine\congratulate;
 
 $userName = getName();
-printGameEssence('Answer "yes" if the number is even, otherwise answer "no".');
+printGameEssence('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 for ($i = 0; $i < 3; $i++) {
     $randomNum = randomNum();
 
     $userAnswer = getAnswer("{$randomNum}");
-    $correctAnswer = (($randomNum % 2) > 0) ? 'no' : 'yes';
+    if (in_array($randomNum, [2, 3, 5, 7])) {
+        $correctAnswer = 'yes';
+    } elseif (
+        ($randomNum % 2) == 0 ||
+        ($randomNum % 3) == 0 ||
+        ($randomNum % 5) == 0 ||
+        ($randomNum % 7) == 0
+    ) {
+        $correctAnswer = 'no';
+    } else {
+        $correctAnswer = 'yes';
+    }
 
     if ($userAnswer === $correctAnswer) {
         printCorrect();

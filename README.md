@@ -15,3 +15,5 @@ https://asciinema.org/a/CzHPkx9eT6Qbkt8m3VXvSEnrK
 https://asciinema.org/a/CLKhg5QzFc6VSuX7Bqz5RS4yV
 ### Asciinema "make brain-progression"
 https://asciinema.org/a/mByV5c75DYAvrTlleSLstrn14
+### Asciinema "make brain-prime"
+https://asciinema.org/a/3G9eENScDCT9bumEROVuI4b4r

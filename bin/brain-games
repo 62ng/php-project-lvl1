@@ -14,4 +14,4 @@ use function Brain\Games\Cli\sayHello;
 
 echo 'Welcome to the Brain Game!', PHP_EOL;
 
-sayHello();
+//sayHello();

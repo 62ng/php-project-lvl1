@@ -58,7 +58,7 @@ for ($i = 0; $i < 3; $i++) {
             $pToString .= " {$pCurrentElement}";
         }
     }
-    
+
     $userMissedElement = getAnswer($pToString);
 
     if ((int) $userMissedElement == (int) $correctMissedElement) {

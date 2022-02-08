@@ -1,12 +1,12 @@
 {
-    "name": "62ng/php-project-lvl1",
+    "name": "hexlet/code",
     "authors": [
         {
             "name": "Andrey Frolov",
             "email": "internet.buro@gmail.com"
         }
     ],
-    "description": "hexlet project 1.0",
+    "description": "Brain games (1-st project in hexlet)",
     "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,

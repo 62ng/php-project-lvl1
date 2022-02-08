@@ -12,4 +12,6 @@ if (file_exists($autoloadPath1)) {
 
 use function Brain\Games\Cli\sayHello;
 
+echo 'Welcome to the Brain Game!', PHP_EOL;
+
 sayHello();

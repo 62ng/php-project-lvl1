@@ -50,7 +50,7 @@ for ($i = 0; $i < 3; $i++) {
         $p = 1, $pCurrentElement = $pStartNum;
         $p <= $pElementsNum;
         $p++, $pCurrentElement += $pDelta
-        ) {
+    ) {
         if ($p == $pMissedElement) {
             $pToString .= " ..";
             $correctMissedElement = $pCurrentElement;
@@ -58,7 +58,7 @@ for ($i = 0; $i < 3; $i++) {
             $pToString .= " {$pCurrentElement}";
         }
     }
-
+    
     $userMissedElement = getAnswer($pToString);
 
     if ((int) $userMissedElement == (int) $correctMissedElement) {

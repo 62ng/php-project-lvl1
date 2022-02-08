@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Brain Even game
+ * Brain Prime game
  * php version 7.4.0
  *
  * @category None
  * @package  None
- * @author   An <an@an.org>
+ * @author   An <internet.buro@gmail.com>
  * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link     None
  **/

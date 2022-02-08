@@ -50,7 +50,7 @@ function getName(): string
 function randomNum(): int
 {
     $startRange = 1;
-    $endRange = 100;
+    $endRange = 20;
 
     return rand($startRange, $endRange);
 }

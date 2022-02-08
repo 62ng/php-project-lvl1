@@ -24,7 +24,8 @@
 	"bin" : [
         "bin/brain-even",
         "bin/brain-calc",
-        "bin/brain-gcd"
+        "bin/brain-gcd",
+        "bin/brain-progression"
 	],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.6"

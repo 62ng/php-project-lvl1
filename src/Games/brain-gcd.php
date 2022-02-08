@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Brain Calc game
+ * Brain GCD game
  * php version 7.4.0
  *
  * @category None
@@ -22,7 +22,6 @@ if (file_exists($autoloadPath1)) {
 use function Brain\Games\Engine\printGameEssence;
 use function Brain\Games\Engine\getName;
 use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\randomArrayElement;
 use function Brain\Games\Engine\getAnswer;
 use function Brain\Games\Engine\printCorrect;
 use function Brain\Games\Engine\printWrong;

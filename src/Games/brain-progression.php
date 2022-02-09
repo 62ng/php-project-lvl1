@@ -22,7 +22,6 @@ if (file_exists($autoloadPath1)) {
 use function Brain\Games\Engine\printGameEssence;
 use function Brain\Games\Engine\getName;
 use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\randomArrayElement;
 use function Brain\Games\Engine\getAnswer;
 use function Brain\Games\Engine\printCorrect;
 use function Brain\Games\Engine\printWrong;
@@ -65,7 +64,7 @@ for ($i = 0; $i < 3; $i++) {
     $pQuestionString = implode(' ', $pQuestion);
     $userMissedElement = getAnswer($pQuestionString);
 
-    if ((int) $userMissedElement == (int) $correctMissedElement) {
+    if ((int) $userMissedElement == $correctMissedElement) {
         printCorrect();
     } else {
         printWrong($userName, $userMissedElement, $correctMissedElement);

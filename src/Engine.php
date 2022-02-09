@@ -56,24 +56,6 @@ function randomNum(): int
 }
 
 /**
- * Get the random element of the array.
- *
- * @param array $arr Array of elements.
- *
- * @return string
- **/
-function randomArrayElement(array $arr): string
-{
-    if (!is_array($arr) || empty($arr)) {
-        return null;
-    }
-
-    $rand_key = array_rand($arr, 1);
-
-    return $arr[$rand_key];
-}
-
-/**
  * Get the answer of gamer.
  *
  * @param string $question Question text.
@@ -100,8 +82,8 @@ function printCorrect()
  * Print msg if answer was wrong.
  *
  * @param string $userName      Gamer's name.
- * @param string $userAnswer    Gamer's answer.
- * @param string $correctAnswer Correct answer.
+ * @param mixed  $userAnswer    Gamer's answer.
+ * @param mixed  $correctAnswer Correct answer.
  *
  * @return void
  **/

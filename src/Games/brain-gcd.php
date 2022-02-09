@@ -43,7 +43,7 @@ for ($i = 0; $i < 3; $i++) {
     }
     $userGCD = getAnswer("{$randomNum1} {$randomNum2}");
 
-    if ((int) $userGCD == (int) $correctGCD) {
+    if ((int) $userGCD == $correctGCD) {
         printCorrect();
     } else {
         printWrong($userName, $userGCD, $correctGCD);

@@ -22,7 +22,6 @@ if (file_exists($autoloadPath1)) {
 use function Brain\Games\Engine\printGameEssence;
 use function Brain\Games\Engine\getName;
 use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\randomArrayElement;
 use function Brain\Games\Engine\getAnswer;
 use function Brain\Games\Engine\printCorrect;
 use function Brain\Games\Engine\printWrong;
@@ -35,7 +34,8 @@ $operations = ['+', '-', '*'];
 for ($i = 0; $i < 3; $i++) {
     $randomNum1 = randomNum();
     $randomNum2 = randomNum();
-    $randomOperation = randomArrayElement($operations);
+    $randomOperationKey = array_rand($operations, 1);
+    $randomOperation = $operations[$randomOperationKey];
 
     $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
     $correctAnswer = eval("return {$randomNum1} {$randomOperation} {$randomNum2};");

@@ -82,7 +82,7 @@ function randomArrayElement(array $arr): string
  **/
 function getAnswer(string $question): string
 {
-    line("Question: %s!", $question);
+    line("Question: %s", $question);
     return prompt('Your answer');
 }
 

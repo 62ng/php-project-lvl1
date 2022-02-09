@@ -45,7 +45,7 @@ for ($i = 0; $i < 3; $i++) {
 
     $pToString = '';
     $correctMissedElement = 0;
-    $pMissedElement = rand(1, $pElementsNum);
+    $pMissedElement = rand(2, $pElementsNum);
     for (
         $p = 1, $pCurrentElement = $pStartNum;
         $p <= $pElementsNum;

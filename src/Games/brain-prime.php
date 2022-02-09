@@ -34,7 +34,7 @@ for ($i = 0; $i < 3; $i++) {
     $randomNum = randomNum();
 
     $userAnswer = getAnswer("{$randomNum}");
-    if (in_array($randomNum, [2, 3, 5, 7]), false) {
+    if (in_array($randomNum, [2, 3, 5, 7], false)) {
         $correctAnswer = 'yes';
     } elseif (
         ($randomNum % 2) == 0 ||

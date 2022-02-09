@@ -33,9 +33,9 @@ printGameEssence('What number is missing in the progression?');
 
 for ($i = 0; $i < 3; $i++) {
     // minimum number of elements in progression
-    $pElementsMinNum = 5;
+    $pElementsMinNum = 6;
     // maximum number of elements in progression
-    $pElementsMaxNum = 10;
+    $pElementsMaxNum = 12;
     // random number of elements in progression
     $pElementsNum = rand($pElementsMinNum, $pElementsMaxNum);
     // random start number of the first element in progression

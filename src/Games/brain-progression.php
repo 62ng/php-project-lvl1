@@ -43,23 +43,27 @@ for ($i = 0; $i < 3; $i++) {
     // random delta in progression
     $pDelta = randomNum();
 
-    $pToString = '';
+    // array with progression elements
+    $pQuestion = [];
+    // missed element of progression
     $correctMissedElement = 0;
-    $pMissedElement = rand(2, $pElementsNum);
+    // random index of missed element in progression array
+    $pMissedElementIndex = rand(2, $pElementsNum);
     for (
         $p = 1, $pCurrentElement = $pStartNum;
         $p <= $pElementsNum;
         $p++, $pCurrentElement += $pDelta
     ) {
-        if ($p == $pMissedElement) {
-            $pToString .= " ..";
+        if ($p == $pMissedElementIndex) {
+            $pQuestion[] = "..";
             $correctMissedElement = $pCurrentElement;
         } else {
-            $pToString .= " {$pCurrentElement}";
+            $pQuestion[] = "{$pCurrentElement}";
         }
     }
 
-    $userMissedElement = getAnswer($pToString);
+    $pQuestionString = implode(' ', $pQuestion);
+    $userMissedElement = getAnswer($pQuestionString);
 
     if ((int) $userMissedElement == (int) $correctMissedElement) {
         printCorrect();

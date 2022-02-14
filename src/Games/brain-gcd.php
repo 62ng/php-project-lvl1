@@ -19,7 +19,7 @@ namespace Brain\Games;
  * @param int $num1 1-st number
  * @param int $num2 2-nd number
  *
- * @return bool
+ * @return int
  **/
 function findGCD(int $num1, int $num2): int
 {

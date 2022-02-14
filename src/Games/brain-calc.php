@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Brain Calc game
+ * Brain Calc game functions
  * php version 7.4.0
  *
  * @category None
@@ -11,41 +11,20 @@
  * @link     None
  **/
 
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
+namespace Brain\Games;
+
+/**
+ * Calc expression
+ *
+ * @param string $operation One of the arithmetic operation type (+, -, *)
+ * @param int    $num1      1-st number
+ * @param int    $num2      2-nd number
+ *
+ * @return int
+ **/
+function calc(string $operation, int $num1, int $num2): int
+{
+    $result = eval("return {$num1} {$operation} {$num2};");
+
+    return $result;
 }
-
-use function Brain\Games\Engine\printGameEssence;
-use function Brain\Games\Engine\getName;
-use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\getAnswer;
-use function Brain\Games\Engine\printCorrect;
-use function Brain\Games\Engine\printWrong;
-use function Brain\Games\Engine\congratulate;
-
-$userName = getName();
-printGameEssence('What is the result of the expression?');
-
-$operations = ['+', '-', '*'];
-for ($i = 0; $i < 3; $i++) {
-    $randomNum1 = randomNum();
-    $randomNum2 = randomNum();
-    $randomOperationKey = array_rand($operations, 1);
-    $randomOperation = $operations[$randomOperationKey];
-
-    $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
-    $correctAnswer = eval("return {$randomNum1} {$randomOperation} {$randomNum2};");
-
-    if ((int) $userAnswer == (int) $correctAnswer) {
-        printCorrect();
-    } else {
-        printWrong($userName, $userAnswer, $correctAnswer);
-        exit;
-    }
-}
-
-congratulate($userName);

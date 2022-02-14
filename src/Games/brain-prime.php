@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Brain Prime game
+ * Brain Prime game functions
  * php version 7.4.0
  *
  * @category None
@@ -11,48 +11,30 @@
  * @link     None
  **/
 
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
-}
+namespace Brain\Games;
 
-use function Brain\Games\Engine\printGameEssence;
-use function Brain\Games\Engine\getName;
-use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\getAnswer;
-use function Brain\Games\Engine\printCorrect;
-use function Brain\Games\Engine\printWrong;
-use function Brain\Games\Engine\congratulate;
-
-$userName = getName();
-printGameEssence('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-for ($i = 0; $i < 3; $i++) {
-    $randomNum = randomNum();
-
-    $userAnswer = getAnswer("{$randomNum}");
-    if (in_array($randomNum, [2, 3, 5, 7], true)) {
-        $correctAnswer = 'yes';
+/**
+ * Determine if number is prime
+ *
+ * @param int $num number
+ *
+ * @return bool
+ **/
+function ifPrime(int $num): bool
+{
+    $deviders = [2, 3, 5, 7];
+    if (in_array($num, $deviders, true)) {
+        $result = true;
     } elseif (
-        ($randomNum % 2) == 0 ||
-        ($randomNum % 3) == 0 ||
-        ($randomNum % 5) == 0 ||
-        ($randomNum % 7) == 0
+        ($num % 2) == 0 ||
+        ($num % 3) == 0 ||
+        ($num % 5) == 0 ||
+        ($num % 7) == 0
     ) {
-        $correctAnswer = 'no';
+        $result = false;
     } else {
-        $correctAnswer = 'yes';
+        $result = true;
     }
 
-    if ($userAnswer === $correctAnswer) {
-        printCorrect();
-    } else {
-        printWrong($userName, $userAnswer, $correctAnswer);
-        exit;
-    }
+    return $result;
 }
-
-congratulate($userName);

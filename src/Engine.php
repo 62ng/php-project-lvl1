@@ -11,7 +11,7 @@
  * @link     None
  **/
 
-namespace Brain\Games\Engine;
+namespace Brain\Engine;
 
 use function cli\line;
 use function cli\prompt;

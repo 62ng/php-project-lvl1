@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Brain GCD game
+ * Brain GCD game functions
  * php version 7.4.0
  *
  * @category None
@@ -11,44 +11,25 @@
  * @link     None
  **/
 
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
-}
+namespace Brain\Games;
 
-use function Brain\Games\Engine\printGameEssence;
-use function Brain\Games\Engine\getName;
-use function Brain\Games\Engine\randomNum;
-use function Brain\Games\Engine\getAnswer;
-use function Brain\Games\Engine\printCorrect;
-use function Brain\Games\Engine\printWrong;
-use function Brain\Games\Engine\congratulate;
-
-$userName = getName();
-printGameEssence('Find the greatest common divisor of given numbers.');
-
-for ($i = 0; $i < 3; $i++) {
-    $randomNum1 = randomNum();
-    $randomNum2 = randomNum();
-
-    $minRandomNum = min($randomNum1, $randomNum2);
-    $correctGCD = 1;
-    for ($gcd = 1; $gcd <= $minRandomNum; $gcd++) {
-        if ((($randomNum1 % $gcd) == 0) && (($randomNum2 % $gcd) == 0)) {
-            $correctGCD = $gcd;
+/**
+ * Find the greatest common divisor
+ *
+ * @param int $num1 1-st number
+ * @param int $num2 2-nd number
+ *
+ * @return bool
+ **/
+function findGCD(int $num1, int $num2): int
+{
+    $minNum = min($num1, $num2);
+    $result = 1;
+    for ($i = 1; $i <= $minNum; $i++) {
+        if ((($num1 % $i) == 0) && (($num2 % $i) == 0)) {
+            $result = $i;
         }
     }
-    $userGCD = getAnswer("{$randomNum1} {$randomNum2}");
 
-    if ((int) $userGCD == $correctGCD) {
-        printCorrect();
-    } else {
-        printWrong($userName, $userGCD, $correctGCD);
-        exit;
-    }
+    return $result;
 }
-
-congratulate($userName);

@@ -22,6 +22,10 @@ namespace Brain\Games;
  **/
 function ifPrime(int $num): bool
 {
+    if ($num == 1) {
+        $result = false;
+    }
+    
     $deviders = [2, 3, 5, 7];
     if (in_array($num, $deviders, true)) {
         $result = true;

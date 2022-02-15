@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHP Command Line Tools
+ * PHP Brain games functions
  * php version 7.4.0
  *
  * @category None

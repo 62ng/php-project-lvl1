@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHP Brain games functions
+ * PHP Brain games functions (1-st project)
  * php version 7.4.0
  *
  * @category None

@@ -38,7 +38,7 @@ function brainPrime()
 
         $userAnswer = getAnswer("{$randomNum}");
         $correctAnswer = ifPrime($randomNum) ? 'yes' : 'no';
-    
+
         if ($userAnswer === $correctAnswer) {
             printCorrect();
         } else {

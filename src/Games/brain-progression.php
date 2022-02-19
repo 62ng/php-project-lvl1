@@ -49,7 +49,7 @@ function brainProgression()
         $pMissedElementIndex = rand(0, $pElementsNum - 1);
         // missed element of progression
         $correctMissedElement = $progression[$pMissedElementIndex];
-        
+
         $progressionToQuestion = $progression;
         $progressionToQuestion[$pMissedElementIndex] = '..';
         $pQuestionString = implode(' ', $progressionToQuestion);

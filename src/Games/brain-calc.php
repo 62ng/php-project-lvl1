@@ -30,17 +30,17 @@ function brainCalc()
 {
     $userName = getName();
     printGameEssence('What is the result of the expression?');
-    
+
     $operations = ['+', '-', '*'];
     for ($i = 0; $i < 3; $i++) {
         $randomNum1 = randomNum();
         $randomNum2 = randomNum();
         $randomOperationKey = array_rand($operations, 1);
         $randomOperation = $operations[$randomOperationKey];
-    
+
         $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
         $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
-    
+
         if ((int) $userAnswer == (int) $correctAnswer) {
             printCorrect();
         } else {
@@ -48,8 +48,8 @@ function brainCalc()
             exit;
         }
     }
-    
-    congratulate($userName);    
+
+    congratulate($userName);
 }
 
 /**

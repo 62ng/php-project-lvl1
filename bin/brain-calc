@@ -10,34 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function Brain\Engine\printGameEssence;
-use function Brain\Engine\getName;
-use function Brain\Engine\randomNum;
-use function Brain\Engine\getAnswer;
-use function Brain\Engine\printCorrect;
-use function Brain\Engine\printWrong;
-use function Brain\Engine\congratulate;
-use function Brain\Games\calc;
+use function Brain\Games\brainCalc;
 
-$userName = getName();
-printGameEssence('What is the result of the expression?');
-
-$operations = ['+', '-', '*'];
-for ($i = 0; $i < 3; $i++) {
-    $randomNum1 = randomNum();
-    $randomNum2 = randomNum();
-    $randomOperationKey = array_rand($operations, 1);
-    $randomOperation = $operations[$randomOperationKey];
-
-    $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
-    $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
-
-    if ((int) $userAnswer == (int) $correctAnswer) {
-        printCorrect();
-    } else {
-        printWrong($userName, $userAnswer, $correctAnswer);
-        exit;
-    }
-}
-
-congratulate($userName);
+brainCalc();

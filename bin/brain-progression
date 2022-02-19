@@ -10,48 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function Brain\Engine\printGameEssence;
-use function Brain\Engine\getName;
-use function Brain\Engine\randomNum;
-use function Brain\Engine\getAnswer;
-use function Brain\Engine\printCorrect;
-use function Brain\Engine\printWrong;
-use function Brain\Engine\congratulate;
-use function Brain\Games\getProgression;
+use function Brain\Games\brainProgression;
 
-$userName = getName();
-printGameEssence('What number is missing in the progression?');
-
-for ($i = 0; $i < 3; $i++) {
-    // minimum number of elements in progression
-    $pElementsMinNum = 6;
-    // maximum number of elements in progression
-    $pElementsMaxNum = 12;
-    // random number of elements in progression
-    $pElementsNum = rand($pElementsMinNum, $pElementsMaxNum);
-    // random start number of the first element in progression
-    $pStartNum = randomNum();
-    // random delta of progression
-    $pDelta = randomNum();
-
-    // array with progression elements
-    $progression = getProgression($pElementsNum, $pStartNum, $pDelta);
-    // random index of missed element in progression array
-    $pMissedElementIndex = rand(0, $pElementsNum - 1);
-    // missed element of progression
-    $correctMissedElement = $progression[$pMissedElementIndex];
-    
-    $progressionToQuestion = $progression;
-    $progressionToQuestion[$pMissedElementIndex] = '..';
-    $pQuestionString = implode(' ', $progressionToQuestion);
-    $userMissedElement = getAnswer($pQuestionString);
-
-    if ((int) $userMissedElement == $correctMissedElement) {
-        printCorrect();
-    } else {
-        printWrong($userName, $userMissedElement, $correctMissedElement);
-        exit;
-    }
-}
-
-congratulate($userName);
+brainProgression();

@@ -13,6 +13,42 @@
 
 namespace Brain\Games;
 
+use function Brain\Engine\printGameEssence;
+use function Brain\Engine\getName;
+use function Brain\Engine\randomNum;
+use function Brain\Engine\getAnswer;
+use function Brain\Engine\printCorrect;
+use function Brain\Engine\printWrong;
+use function Brain\Engine\congratulate;
+
+/**
+ * Brain GCD game
+ *
+ * @return void
+ **/
+function brainGCD()
+{
+    $userName = getName();
+    printGameEssence('Find the greatest common divisor of given numbers.');
+
+    for ($i = 0; $i < 3; $i++) {
+        $randomNum1 = randomNum();
+        $randomNum2 = randomNum();
+
+        $userGCD = getAnswer("{$randomNum1} {$randomNum2}");
+        $correctGCD = findGCD($randomNum1, $randomNum2);
+
+        if ((int) $userGCD == $correctGCD) {
+            printCorrect();
+        } else {
+            printWrong($userName, $userGCD, $correctGCD);
+            exit;
+        }
+    }
+
+    congratulate($userName);
+}
+
 /**
  * Find the greatest common divisor
  *

@@ -13,16 +13,37 @@
 
 namespace Brain\Games;
 
-/**
- * Determine if value is even
- *
- * @param int $num number to determine
- *
- * @return bool
- **/
-function ifEven(int $num): bool
-{
-    $result = (($num % 2) === 0) ? true : false;
+use function Brain\Engine\printGameEssence;
+use function Brain\Engine\getName;
+use function Brain\Engine\randomNum;
+use function Brain\Engine\getAnswer;
+use function Brain\Engine\printCorrect;
+use function Brain\Engine\printWrong;
+use function Brain\Engine\congratulate;
 
-    return $result;
+/**
+ * Brain Even game
+ *
+ * @return void
+ **/
+function brainEven()
+{
+    $userName = getName();
+    printGameEssence('Answer "yes" if the number is even, otherwise answer "no".');
+
+    for ($i = 0; $i < 3; $i++) {
+        $randomNum = randomNum();
+
+        $userAnswer = getAnswer("{$randomNum}");
+        $correctAnswer = (($randomNum % 2) === 0) ? 'yes' : 'no';
+
+        if ($userAnswer === $correctAnswer) {
+            printCorrect();
+        } else {
+            printWrong($userName, $userAnswer, $correctAnswer);
+            exit;
+        }
+    }
+
+    congratulate($userName);
 }

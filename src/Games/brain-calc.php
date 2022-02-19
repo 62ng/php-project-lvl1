@@ -41,7 +41,7 @@ function brainCalc()
         $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
         $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
 
-        if ((int) $userAnswer == (int) $correctAnswer) {
+        if ((int) $userAnswer == $correctAnswer) {
             printCorrect();
         } else {
             printWrong($userName, $userAnswer, $correctAnswer);
@@ -65,15 +65,10 @@ function calc(string $operation, int $num1, int $num2): int
 {
     switch ($operation) {
         case '+':
-            $result = $num1 + $num2;
-            break;
+            return $num1 + $num2;
         case '-':
-            $result = $num1 - $num2;
-            break;
+            return $num1 - $num2;
         case '*':
-            $result = $num1 * $num2;
-            break;
+            return $num1 * $num2;
     }
-
-    return $result;
 }

@@ -22,7 +22,8 @@ use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
 define(
-    'ESSENCE_PRIME', 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    'ESSENCE_PRIME',
+    'Answer "yes" if given number is prime. Otherwise answer "no".'
 );
 
 /**

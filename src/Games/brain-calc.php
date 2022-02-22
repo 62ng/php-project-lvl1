@@ -40,10 +40,12 @@ function brainCalc()
         $randomOperationKey = array_rand($operations, 1);
         $randomOperation = $operations[$randomOperationKey];
 
-        $userAnswer = getAnswer("{$randomNum1} {$randomOperation} {$randomNum2}");
+        $userAnswer = (int) getAnswer(
+            "{$randomNum1} {$randomOperation} {$randomNum2}"
+        );
         $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
 
-        if ((int) $userAnswer == $correctAnswer) {
+        if ($userAnswer == $correctAnswer) {
             printCorrect();
         } else {
             printWrong($userName, $userAnswer, $correctAnswer);

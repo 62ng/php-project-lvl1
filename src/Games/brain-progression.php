@@ -55,9 +55,9 @@ function brainProgression()
         $progressionToQuestion = $progression;
         $progressionToQuestion[$pMissedElementIndex] = '..';
         $pQuestionString = implode(' ', $progressionToQuestion);
-        $userMissedElement = getAnswer($pQuestionString);
+        $userMissedElement = (int) getAnswer($pQuestionString);
 
-        if ((int) $userMissedElement == $correctMissedElement) {
+        if ($userMissedElement == $correctMissedElement) {
             printCorrect();
         } else {
             printWrong($userName, $userMissedElement, $correctMissedElement);

@@ -21,7 +21,9 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
-define('ESSENCE_PRIME', 'Answer "yes" if given number is prime. Otherwise answer "no".');
+define(
+    'ESSENCE_PRIME', 'Answer "yes" if given number is prime. Otherwise answer "no".'
+);
 
 /**
  * Brain Prime game

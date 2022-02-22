@@ -37,10 +37,10 @@ function brainGCD()
         $randomNum1 = randomNum();
         $randomNum2 = randomNum();
 
-        $userGCD = getAnswer("{$randomNum1} {$randomNum2}");
+        $userGCD = (int) getAnswer("{$randomNum1} {$randomNum2}");
         $correctGCD = findGCD($randomNum1, $randomNum2);
 
-        if ((int) $userGCD == $correctGCD) {
+        if ($userGCD == $correctGCD) {
             printCorrect();
         } else {
             printWrong($userName, $userGCD, $correctGCD);

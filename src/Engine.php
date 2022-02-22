@@ -16,6 +16,8 @@ namespace Brain\Engine;
 use function cli\line;
 use function cli\prompt;
 
+define('ROUNDS', 3);
+
 /**
  * Print the Essence of the game.
  *

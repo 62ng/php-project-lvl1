@@ -34,7 +34,7 @@ function brainCalc()
     printGameEssence(ESSENCE_CALC);
 
     $operations = ['+', '-', '*'];
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum1 = randomNum();
         $randomNum2 = randomNum();
         $randomOperationKey = array_rand($operations, 1);

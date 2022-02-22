@@ -33,7 +33,7 @@ function brainEven()
     $userName = getName();
     printGameEssence(ESSENCE_EVEN);
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum = randomNum();
 
         $userAnswer = getAnswer("{$randomNum}");

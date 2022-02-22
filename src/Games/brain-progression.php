@@ -33,7 +33,7 @@ function brainProgression()
     $userName = getName();
     printGameEssence(ESSENCE_PROGRESSION);
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         // minimum number of elements in progression
         $pElementsMinNum = 6;
         // maximum number of elements in progression

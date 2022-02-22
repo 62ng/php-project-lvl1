@@ -33,7 +33,7 @@ function brainGCD()
     $userName = getName();
     printGameEssence(ESSENCE_GCD);
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum1 = randomNum();
         $randomNum2 = randomNum();
 

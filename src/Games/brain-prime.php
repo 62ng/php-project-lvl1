@@ -33,7 +33,7 @@ function brainPrime()
     $userName = getName();
     printGameEssence(ESSENCE_PRIME);
 
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum = randomNum();
 
         $userAnswer = getAnswer("{$randomNum}");

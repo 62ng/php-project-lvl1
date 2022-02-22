@@ -44,8 +44,7 @@ function printWrong(
     string $userName,
     string $userAnswer,
     string $correctAnswer
-): void
-{
+): void {
     line(
         "'%s' is wrong answer ;(. Correct answer was '%s'.",
         $userAnswer,

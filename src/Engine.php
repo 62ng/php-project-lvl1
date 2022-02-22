@@ -41,12 +41,13 @@ function printCorrect(): void
 }
 
 /**
- * $userName        string
- * $userAnswer      mixed
- * $correctAnswer   mixed
- */
-
-function printWrong(string $userName, $userAnswer, $correctAnswer): void
+ * @param string $userName
+ * @param mixed  $userAnswer
+ * @param mixed  $correctAnswer
+ *
+ * @return void
+ **/
+function printWrong($userName, $userAnswer, $correctAnswer)
 {
     line(
         "'%s' is wrong answer ;(. Correct answer was '%s'.",

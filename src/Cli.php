@@ -11,7 +11,7 @@
  * @link     None
  **/
 
-namespace Brain\Games\Cli;
+namespace Brain\Cli;
 
 use function cli\line;
 use function cli\prompt;

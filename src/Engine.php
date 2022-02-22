@@ -40,7 +40,11 @@ function printCorrect(): void
     line("Correct!");
 }
 
-function printWrong(string $userName, $userAnswer, $correctAnswer): void
+function printWrong(
+    string $userName, 
+    string $userAnswer, 
+    string $correctAnswer
+    ): void
 {
     line(
         "'%s' is wrong answer ;(. Correct answer was '%s'.",

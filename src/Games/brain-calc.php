@@ -74,7 +74,7 @@ function calc(string $operation, int $num1, int $num2): int
             return $num1 - $num2;
         case '*':
             return $num1 * $num2;
+        default:
+            return 0;
     }
-
-    return 0;
 }

@@ -49,7 +49,7 @@ function brainCalc()
             printCorrect();
         } else {
             printWrong($userName, $userAnswer, $correctAnswer);
-            exit;
+            return;
         }
     }
 

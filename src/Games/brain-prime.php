@@ -1,16 +1,5 @@
 <?php
 
-/**
- * Brain Prime game functions
- * php version 7.4.0
- *
- * @category None
- * @package  None
- * @author   An <internet.buro@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     None
- **/
-
 namespace Brain\Games;
 
 use function Brain\Engine\printGameEssence;
@@ -26,12 +15,7 @@ define(
     'Answer "yes" if given number is prime. Otherwise answer "no".'
 );
 
-/**
- * Brain Prime game
- *
- * @return void
- **/
-function brainPrime()
+function brainPrime(): void
 {
     $userName = getName();
     printGameEssence(ESSENCE_PRIME);
@@ -53,13 +37,6 @@ function brainPrime()
     congratulate($userName);
 }
 
-/**
- * Determine if number is prime
- *
- * @param int $num number
- *
- * @return bool
- **/
 function ifPrime(int $num): bool
 {
     if ($num < 2) {

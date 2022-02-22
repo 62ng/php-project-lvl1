@@ -1,16 +1,5 @@
 <?php
 
-/**
- * PHP Brain games functions (1-st project)
- * php version 7.4.0
- *
- * @category None
- * @package  None
- * @author   An <an@an.org>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     None
- **/
-
 namespace Brain\Engine;
 
 use function cli\line;
@@ -18,23 +7,11 @@ use function cli\prompt;
 
 define('ROUNDS', 3);
 
-/**
- * Print the Essence of the game.
- *
- * @param string $essence The Essence of the game to print.
- *
- * @return void
- **/
-function printGameEssence($essence)
+function printGameEssence(string $essence): void
 {
     line($essence);
 }
 
-/**
- * Get the name of the gamer.
- *
- * @return string
- **/
 function getName(): string
 {
     line('Welcome to the Brain Games!');
@@ -44,11 +21,6 @@ function getName(): string
     return $name;
 }
 
-/**
- * Get the random num.
- *
- * @return int
- **/
 function randomNum(): int
 {
     $startRange = 1;
@@ -57,39 +29,18 @@ function randomNum(): int
     return rand($startRange, $endRange);
 }
 
-/**
- * Get the answer of gamer.
- *
- * @param string $question Question text.
- *
- * @return string
- **/
 function getAnswer(string $question): string
 {
     line("Question: %s", $question);
     return prompt('Your answer');
 }
 
-/**
- * Print msg if answer was correct.
- *
- * @return void
- **/
-function printCorrect()
+function printCorrect(): void
 {
     line("Correct!");
 }
 
-/**
- * Print msg if answer was wrong.
- *
- * @param string $userName      Gamer's name.
- * @param mixed  $userAnswer    Gamer's answer.
- * @param mixed  $correctAnswer Correct answer.
- *
- * @return void
- **/
-function printWrong($userName, $userAnswer, $correctAnswer)
+function printWrong(string $userName, $userAnswer, $correctAnswer): void
 {
     line(
         "'%s' is wrong answer ;(. Correct answer was '%s'.",
@@ -99,14 +50,7 @@ function printWrong($userName, $userAnswer, $correctAnswer)
     line("Let's try again, %s!", $userName);
 }
 
-/**
- * Congratulate if the game is won.
- *
- * @param string $userName Gamer's name.
- *
- * @return void
- **/
-function congratulate($userName)
+function congratulate(string $userName): void
 {
     line("Congratulations, %s!", $userName);
 }

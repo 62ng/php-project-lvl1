@@ -1,16 +1,5 @@
 <?php
 
-/**
- * Brain Progression game functions
- * php version 7.4.0
- *
- * @category None
- * @package  None
- * @author   An <internet.buro@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     None
- **/
-
 namespace Brain\Games;
 
 use function Brain\Engine\printGameEssence;
@@ -23,12 +12,7 @@ use function Brain\Engine\congratulate;
 
 define('ESSENCE_PROGRESSION', 'What number is missing in the progression?');
 
-/**
- * Brain Progression game
- *
- * @return void
- **/
-function brainProgression()
+function brainProgression(): void
 {
     $userName = getName();
     printGameEssence(ESSENCE_PROGRESSION);
@@ -68,15 +52,6 @@ function brainProgression()
     congratulate($userName);
 }
 
-/**
- * Generate progression
- *
- * @param int $elementsNum number of elements in progression
- * @param int $startNum    1-st element
- * @param int $delta       delta between elements
- *
- * @return array
- **/
 function getProgression(int $elementsNum, int $startNum, int $delta): array
 {
     $result = [];

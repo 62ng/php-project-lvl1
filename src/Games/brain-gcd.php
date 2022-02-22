@@ -1,16 +1,5 @@
 <?php
 
-/**
- * Brain GCD game functions
- * php version 7.4.0
- *
- * @category None
- * @package  None
- * @author   An <internet.buro@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     None
- **/
-
 namespace Brain\Games;
 
 use function Brain\Engine\printGameEssence;
@@ -23,12 +12,7 @@ use function Brain\Engine\congratulate;
 
 define('ESSENCE_GCD', 'Find the greatest common divisor of given numbers.');
 
-/**
- * Brain GCD game
- *
- * @return void
- **/
-function brainGCD()
+function brainGCD(): void
 {
     $userName = getName();
     printGameEssence(ESSENCE_GCD);
@@ -51,14 +35,6 @@ function brainGCD()
     congratulate($userName);
 }
 
-/**
- * Find the greatest common divisor
- *
- * @param int $num1 1-st number
- * @param int $num2 2-nd number
- *
- * @return int
- **/
 function findGCD(int $num1, int $num2): int
 {
     $minNum = min($num1, $num2);

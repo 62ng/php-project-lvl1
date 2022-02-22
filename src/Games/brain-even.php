@@ -1,16 +1,5 @@
 <?php
 
-/**
- * Brain Even game functions
- * php version 7.4.0
- *
- * @category None
- * @package  None
- * @author   An <internet.buro@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
- * @link     None
- **/
-
 namespace Brain\Games;
 
 use function Brain\Engine\printGameEssence;
@@ -23,12 +12,7 @@ use function Brain\Engine\congratulate;
 
 define('ESSENCE_EVEN', 'Answer "yes" if the number is even, otherwise answer "no".');
 
-/**
- * Brain Even game
- *
- * @return void
- **/
-function brainEven()
+function brainEven(): void
 {
     $userName = getName();
     printGameEssence(ESSENCE_EVEN);

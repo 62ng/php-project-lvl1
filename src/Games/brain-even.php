@@ -21,6 +21,8 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
+define('ESSENCE_EVEN', 'Answer "yes" if the number is even, otherwise answer "no".');
+
 /**
  * Brain Even game
  *
@@ -29,7 +31,7 @@ use function Brain\Engine\congratulate;
 function brainEven()
 {
     $userName = getName();
-    printGameEssence('Answer "yes" if the number is even, otherwise answer "no".');
+    printGameEssence(ESSENCE_EVEN);
 
     for ($i = 0; $i < 3; $i++) {
         $randomNum = randomNum();

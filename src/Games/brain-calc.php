@@ -21,6 +21,8 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
+define('ESSENCE_CALC', 'What is the result of the expression?');
+
 /**
  * Brain Calc game
  *
@@ -29,7 +31,7 @@ use function Brain\Engine\congratulate;
 function brainCalc()
 {
     $userName = getName();
-    printGameEssence('What is the result of the expression?');
+    printGameEssence(ESSENCE_CALC);
 
     $operations = ['+', '-', '*'];
     for ($i = 0; $i < 3; $i++) {

@@ -21,6 +21,8 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
+define('ESSENCE_PRIME', 'Answer "yes" if given number is prime. Otherwise answer "no".');
+
 /**
  * Brain Prime game
  *
@@ -29,9 +31,7 @@ use function Brain\Engine\congratulate;
 function brainPrime()
 {
     $userName = getName();
-    printGameEssence(
-        'Answer "yes" if given number is prime. Otherwise answer "no".'
-    );
+    printGameEssence(ESSENCE_PRIME);
 
     for ($i = 0; $i < 3; $i++) {
         $randomNum = randomNum();

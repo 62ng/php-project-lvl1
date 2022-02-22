@@ -21,6 +21,8 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
+define('ESSENCE_PROGRESSION', 'What number is missing in the progression?');
+
 /**
  * Brain Progression game
  *
@@ -29,7 +31,7 @@ use function Brain\Engine\congratulate;
 function brainProgression()
 {
     $userName = getName();
-    printGameEssence('What number is missing in the progression?');
+    printGameEssence(ESSENCE_PROGRESSION);
 
     for ($i = 0; $i < 3; $i++) {
         // minimum number of elements in progression

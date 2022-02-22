@@ -21,6 +21,8 @@ use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
 
+define('ESSENCE_GCD', 'Find the greatest common divisor of given numbers.');
+
 /**
  * Brain GCD game
  *
@@ -29,7 +31,7 @@ use function Brain\Engine\congratulate;
 function brainGCD()
 {
     $userName = getName();
-    printGameEssence('Find the greatest common divisor of given numbers.');
+    printGameEssence(ESSENCE_GCD);
 
     for ($i = 0; $i < 3; $i++) {
         $randomNum1 = randomNum();

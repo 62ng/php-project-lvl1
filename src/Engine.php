@@ -5,7 +5,7 @@ namespace Brain\Engine;
 use function cli\line;
 use function cli\prompt;
 
-define('ROUNDS', 3);
+const ROUNDS = 3;
 
 function printGameEssence(string $essence): void
 {

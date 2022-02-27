@@ -9,8 +9,9 @@ use function Brain\Engine\getAnswer;
 use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
+use const Brain\Engine\ROUNDS;
 
-define('ESSENCE_PROGRESSION', 'What number is missing in the progression?');
+const ESSENCE_PROGRESSION = 'What number is missing in the progression?';
 
 function brainProgression(): void
 {

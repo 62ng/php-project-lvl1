@@ -9,8 +9,9 @@ use function Brain\Engine\getAnswer;
 use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
+use const Brain\Engine\ROUNDS;
 
-define('ESSENCE_GCD', 'Find the greatest common divisor of given numbers.');
+const ESSENCE_GCD = 'Find the greatest common divisor of given numbers.';
 
 function brainGCD(): void
 {

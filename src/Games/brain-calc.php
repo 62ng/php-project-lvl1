@@ -9,8 +9,9 @@ use function Brain\Engine\getAnswer;
 use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
+use const Brain\Engine\ROUNDS;
 
-define('ESSENCE_CALC', 'What is the result of the expression?');
+const ESSENCE_CALC = 'What is the result of the expression?';
 
 function brainCalc(): void
 {

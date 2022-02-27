@@ -9,8 +9,9 @@ use function Brain\Engine\getAnswer;
 use function Brain\Engine\printCorrect;
 use function Brain\Engine\printWrong;
 use function Brain\Engine\congratulate;
+use const Brain\Engine\ROUNDS;
 
-define('ESSENCE_EVEN', 'Answer "yes" if the number is even, otherwise answer "no".');
+const ESSENCE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function brainEven(): void
 {

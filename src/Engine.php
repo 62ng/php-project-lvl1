@@ -31,7 +31,7 @@ function getAnswer(string $question): string
     return prompt('Your answer');
 }
 
-function checkRound(string $userName, $userAnswer, $correctAnswer): bool
+function checkRound(string $userName, mixed $userAnswer, mixed $correctAnswer): bool
 {
     if ($userAnswer === $correctAnswer) {
         line("Correct!");

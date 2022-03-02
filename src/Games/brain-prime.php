@@ -1,14 +1,12 @@
 <?php
 
-namespace Brain\Games;
+namespace Brain\Prime;
 
-use function Brain\Engine\printGameEssence;
-use function Brain\Engine\getName;
+use function Brain\Engine\startGame;
 use function Brain\Engine\randomNum;
 use function Brain\Engine\getAnswer;
-use function Brain\Engine\printCorrect;
-use function Brain\Engine\printWrong;
-use function Brain\Engine\congratulate;
+use function Brain\Engine\checkRound;
+use function Brain\Engine\endGame;
 use const Brain\Engine\ROUNDS;
 
 const
@@ -16,8 +14,7 @@ const
 
 function brainPrime(): void
 {
-    $userName = getName();
-    printGameEssence(ESSENCE_PRIME);
+    $userName = startGame(ESSENCE_PRIME);
 
     for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum = randomNum();
@@ -25,15 +22,13 @@ function brainPrime(): void
         $userAnswer = getAnswer("{$randomNum}");
         $correctAnswer = ifPrime($randomNum) ? 'yes' : 'no';
 
-        if ($userAnswer === $correctAnswer) {
-            printCorrect();
-        } else {
-            printWrong($userName, $userAnswer, $correctAnswer);
-            exit;
+        $result = checkRound($userName, $userAnswer, $correctAnswer);
+        if (!$result) {
+            return;
         }
     }
 
-    congratulate($userName);
+    endGame($userName);
 }
 
 function ifPrime(int $num): bool

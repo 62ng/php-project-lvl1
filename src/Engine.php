@@ -7,16 +7,12 @@ use function cli\prompt;
 
 const ROUNDS = 3;
 
-function printGameEssence(string $essence): void
-{
-    line($essence);
-}
-
-function getName(): string
+function startGame(string $essens): string
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line($essens);
 
     return $name;
 }
@@ -24,7 +20,7 @@ function getName(): string
 function randomNum(): int
 {
     $startRange = 1;
-    $endRange = 100;
+    $endRange = 10;
 
     return rand($startRange, $endRange);
 }
@@ -35,29 +31,23 @@ function getAnswer(string $question): string
     return prompt('Your answer');
 }
 
-function printCorrect(): void
+function checkRound(string $userName, string $userAnswer, string $correctAnswer): bool
 {
-    line("Correct!");
+    if ($userAnswer === $correctAnswer) {
+        line("Correct!");
+        return true;
+    } else {
+        line(
+            "'%s' is wrong answer ;(. Correct answer was '%s'.",
+            $userAnswer,
+            $correctAnswer
+        );
+        line("Let's try again, %s!", $userName);
+        return false;
+    }
 }
 
-/**
- * @param string $userName
- * @param mixed  $userAnswer
- * @param mixed  $correctAnswer
- *
- * @return void
- **/
-function printWrong($userName, $userAnswer, $correctAnswer)
-{
-    line(
-        "'%s' is wrong answer ;(. Correct answer was '%s'.",
-        $userAnswer,
-        $correctAnswer
-    );
-    line("Let's try again, %s!", $userName);
-}
-
-function congratulate(string $userName): void
+function endGame(string $userName): void
 {
     line("Congratulations, %s!", $userName);
 }

@@ -1,22 +1,19 @@
 <?php
 
-namespace Brain\Games;
+namespace Brain\Calc;
 
-use function Brain\Engine\printGameEssence;
-use function Brain\Engine\getName;
+use function Brain\Engine\startGame;
 use function Brain\Engine\randomNum;
 use function Brain\Engine\getAnswer;
-use function Brain\Engine\printCorrect;
-use function Brain\Engine\printWrong;
-use function Brain\Engine\congratulate;
+use function Brain\Engine\checkRound;
+use function Brain\Engine\endGame;
 use const Brain\Engine\ROUNDS;
 
 const ESSENCE_CALC = 'What is the result of the expression?';
 
 function brainCalc(): void
 {
-    $userName = getName();
-    printGameEssence(ESSENCE_CALC);
+    $userName = startGame(ESSENCE_CALC);
 
     $operations = ['+', '-', '*'];
     for ($i = 0; $i < ROUNDS; $i++) {
@@ -30,15 +27,13 @@ function brainCalc(): void
         );
         $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
 
-        if ($userAnswer == $correctAnswer) {
-            printCorrect();
-        } else {
-            printWrong($userName, $userAnswer, $correctAnswer);
+        $result = checkRound($userName, $userAnswer, $correctAnswer);
+        if (!$result) {
             return;
         }
     }
 
-    congratulate($userName);
+    endGame($userName);
 }
 
 function calc(string $operation, int $num1, int $num2): int
@@ -51,6 +46,6 @@ function calc(string $operation, int $num1, int $num2): int
         case '*':
             return $num1 * $num2;
         default:
-            return 0;
+            throw new \Exception('Operation not found!');
     }
 }

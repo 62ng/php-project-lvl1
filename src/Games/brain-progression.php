@@ -1,22 +1,19 @@
 <?php
 
-namespace Brain\Games;
+namespace Brain\Progression;
 
-use function Brain\Engine\printGameEssence;
-use function Brain\Engine\getName;
+use function Brain\Engine\startGame;
 use function Brain\Engine\randomNum;
 use function Brain\Engine\getAnswer;
-use function Brain\Engine\printCorrect;
-use function Brain\Engine\printWrong;
-use function Brain\Engine\congratulate;
+use function Brain\Engine\checkRound;
+use function Brain\Engine\endGame;
 use const Brain\Engine\ROUNDS;
 
 const ESSENCE_PROGRESSION = 'What number is missing in the progression?';
 
 function brainProgression(): void
 {
-    $userName = getName();
-    printGameEssence(ESSENCE_PROGRESSION);
+    $userName = startGame(ESSENCE_PROGRESSION);
 
     for ($i = 0; $i < ROUNDS; $i++) {
         // minimum number of elements in progression
@@ -35,22 +32,20 @@ function brainProgression(): void
         // random index of missed element in progression array
         $pMissedElementIndex = rand(0, $pElementsNum - 1);
         // missed element of progression
-        $correctMissedElement = $progression[$pMissedElementIndex];
+        $correctAnswer = $progression[$pMissedElementIndex];
 
         $progressionToQuestion = $progression;
         $progressionToQuestion[$pMissedElementIndex] = '..';
         $pQuestionString = implode(' ', $progressionToQuestion);
-        $userMissedElement = (int) getAnswer($pQuestionString);
+        $userAnswer = (int) getAnswer($pQuestionString);
 
-        if ($userMissedElement == $correctMissedElement) {
-            printCorrect();
-        } else {
-            printWrong($userName, $userMissedElement, $correctMissedElement);
-            exit;
+        $result = checkRound($userName, $userAnswer, $correctAnswer);
+        if (!$result) {
+            return;
         }
     }
 
-    congratulate($userName);
+    endGame($userName);
 }
 
 function getProgression(int $elementsNum, int $startNum, int $delta): array

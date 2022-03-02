@@ -7,6 +7,7 @@ use function Brain\Engine\randomNum;
 use function Brain\Engine\getAnswer;
 use function Brain\Engine\checkRound;
 use function Brain\Engine\endGame;
+
 use const Brain\Engine\ROUNDS;
 
 const ESSENCE_CALC = 'What is the result of the expression?';

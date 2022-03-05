@@ -31,7 +31,7 @@ function getAnswer(string $question): string
     return prompt('Your answer');
 }
 
-function checkRound(string $userName, $userAnswer, $correctAnswer): bool
+function checkRound(string $userName, string $userAnswer, string $correctAnswer): bool
 {
     if ($userAnswer === $correctAnswer) {
         line("Correct!");
@@ -52,7 +52,7 @@ function endGame(string $userName): void
     line("Congratulations, %s!", $userName);
 }
 
-function startGame($namespace, $essence): void
+function startGame(string $namespace, string $essence): void
 {
     $userName = getUserName($essence);
 

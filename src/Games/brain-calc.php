@@ -4,40 +4,29 @@ namespace Brain\Calc;
 
 use function Brain\Engine\startGame;
 use function Brain\Engine\randomNum;
-use function Brain\Engine\getAnswer;
-use function Brain\Engine\checkRound;
-use function Brain\Engine\endGame;
-
-use const Brain\Engine\ROUNDS;
 
 const ESSENCE_CALC = 'What is the result of the expression?';
 
-function brainCalc(): void
+function brainCalcGame(): void
 {
-    $userName = startGame(ESSENCE_CALC);
-
-    $operations = ['+', '-', '*'];
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $randomNum1 = randomNum();
-        $randomNum2 = randomNum();
-        $randomOperationKey = array_rand($operations, 1);
-        $randomOperation = $operations[$randomOperationKey];
-
-        $userAnswer = (int) getAnswer(
-            "{$randomNum1} {$randomOperation} {$randomNum2}"
-        );
-        $correctAnswer = calc($randomOperation, $randomNum1, $randomNum2);
-
-        $result = checkRound($userName, $userAnswer, $correctAnswer);
-        if (!$result) {
-            return;
-        }
-    }
-
-    endGame($userName);
+    startGame(__NAMESPACE__, ESSENCE_CALC);
 }
 
-function calc(string $operation, int $num1, int $num2): int
+function roundQuestionAndAnswer()
+{
+    $operations = ['+', '-', '*'];
+    $randomNum1 = randomNum();
+    $randomNum2 = randomNum();
+    $randomOperationKey = array_rand($operations, 1);
+    $randomOperation = $operations[$randomOperationKey];
+
+    return [
+        "{$randomNum1} {$randomOperation} {$randomNum2}",
+        correctAnswer($randomOperation, $randomNum1, $randomNum2)
+    ];
+}
+
+function correctAnswer(string $operation, int $num1, int $num2): string
 {
     switch ($operation) {
         case '+':

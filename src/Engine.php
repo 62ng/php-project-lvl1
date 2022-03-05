@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const ROUNDS = 3;
 
-function startGame(string $essens): string
+function getUserName(string $essens): string
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -31,7 +31,7 @@ function getAnswer(string $question): string
     return prompt('Your answer');
 }
 
-function checkRound(string $userName, mixed $userAnswer, mixed $correctAnswer): bool
+function checkRound(string $userName, $userAnswer, $correctAnswer): bool
 {
     if ($userAnswer === $correctAnswer) {
         line("Correct!");
@@ -50,4 +50,22 @@ function checkRound(string $userName, mixed $userAnswer, mixed $correctAnswer): 
 function endGame(string $userName): void
 {
     line("Congratulations, %s!", $userName);
+}
+
+function startGame($namespace, $essence): void
+{
+    $userName = getUserName($essence);
+
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $roundQuestionAndAnswer = "{$namespace}\\roundQuestionAndAnswer";
+        [$roundQuestion, $correctAnswer] = $roundQuestionAndAnswer();
+        $userAnswer = getAnswer($roundQuestion);
+
+        $result = checkRound($userName, $userAnswer, $correctAnswer);
+        if (!$result) {
+            return;
+        }
+    }
+
+    endGame($userName);
 }

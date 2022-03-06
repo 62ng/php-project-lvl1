@@ -19,7 +19,7 @@ function brainCalcGame(): void
         $randomOperationKey = array_rand($operations, 1);
         $randomOperation = $operations[$randomOperationKey];
 
-        $questionsAndAnswers []= [
+        $questionsAndAnswers [] = [
             "{$randomNum1} {$randomOperation} {$randomNum2}",
             correctAnswer($randomOperation, $randomNum1, $randomNum2)
         ];

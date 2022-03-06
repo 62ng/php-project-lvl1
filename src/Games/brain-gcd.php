@@ -15,8 +15,8 @@ function brainGCDGame(): void
     for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum1 = randomNum();
         $randomNum2 = randomNum();
-    
-        $questionsAndAnswers []= [
+
+        $questionsAndAnswers [] = [
             "{$randomNum1} {$randomNum2}",
             correctAnswer($randomNum1, $randomNum2)
         ];

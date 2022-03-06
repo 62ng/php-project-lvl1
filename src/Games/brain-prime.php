@@ -15,8 +15,8 @@ function brainPrimeGame(): void
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
         $randomNum = randomNum();
-    
-        $questionsAndAnswers []= [
+
+        $questionsAndAnswers [] = [
             "{$randomNum}",
             correctAnswer($randomNum) ? 'yes' : 'no'
         ];

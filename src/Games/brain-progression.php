@@ -34,8 +34,8 @@ function brainProgressionGame(): void
         $progressionToQuestion = $progression;
         $progressionToQuestion[$pMissedElementIndex] = '..';
         $pQuestionString = implode(' ', $progressionToQuestion);
-    
-        $questionsAndAnswers []= [
+
+        $questionsAndAnswers [] = [
             "{$pQuestionString}",
             $correctAnswer
         ];

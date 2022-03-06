@@ -5,20 +5,23 @@ namespace Brain\Even;
 use function Brain\Engine\startGame;
 use function Brain\Engine\randomNum;
 
-const ESSENCE_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".';
+use const Brain\Engine\ROUNDS;
+
+const ESSENCE_EVEN = 'Answer "yes" if the number is even, otherwiseanswer "no".';
 
 function brainEvenGame(): void
 {
-    startGame(__NAMESPACE__, ESSENCE_EVEN);
-}
+    $questionsAndAnswers = [];
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $randomNum = randomNum();
+        
+        $questionsAndAnswers []= [
+            "{$randomNum}",
+            correctAnswer($randomNum)
+        ];
+    }
 
-function roundQuestionAndAnswer()
-{
-    $randomNum = randomNum();
-    return [
-        "{$randomNum}",
-        correctAnswer($randomNum)
-    ];
+    startGame($questionsAndAnswers, ESSENCE_EVEN);
 }
 
 function correctAnswer(int $randomNum): string

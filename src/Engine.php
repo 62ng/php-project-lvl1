@@ -52,13 +52,12 @@ function endGame(string $userName): void
     line("Congratulations, %s!", $userName);
 }
 
-function startGame(string $namespace, string $essence): void
+function startGame(array $questionsAndAnswers, string $essence): void
 {
     $userName = getUserName($essence);
 
     for ($i = 0; $i < ROUNDS; $i++) {
-        $roundQuestionAndAnswer = "{$namespace}\\roundQuestionAndAnswer";
-        [$roundQuestion, $correctAnswer] = $roundQuestionAndAnswer();
+        [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];
         $userAnswer = getAnswer($roundQuestion);
 
         $result = checkRound($userName, $userAnswer, $correctAnswer);

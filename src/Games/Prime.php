@@ -17,14 +17,14 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum}",
-            ifPrime($randomNum) ? 'yes' : 'no'
+            isPrime($randomNum) ? 'yes' : 'no'
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_PRIME);
 }
 
-function ifPrime(int $num): bool
+function isPrime(int $num): bool
 {
     if ($num < 2) {
         return false;

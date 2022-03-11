@@ -17,17 +17,19 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum}",
-            getCorrectAnswer($randomNum) ? 'yes' : 'no'
+            ifPrime($randomNum) ? 'yes' : 'no'
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_PRIME);
 }
 
-function getCorrectAnswer(int $num): bool
+function ifPrime(int $num): bool
 {
     if ($num < 2) {
         return false;
+    } elseif ($num == 2 || $num == 3) {
+        return true;
     }
 
     for ($i = 2; $i <= $num / 2; $i++) {

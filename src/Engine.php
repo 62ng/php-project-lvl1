@@ -47,11 +47,6 @@ function checkRound(string $userName, string $userAnswer, string $correctAnswer)
     }
 }
 
-function endGame(string $userName): void
-{
-    line("Congratulations, %s!", $userName);
-}
-
 function startGame(array $questionsAndAnswers, string $essence): void
 {
     $userName = welcome($essence);
@@ -66,5 +61,5 @@ function startGame(array $questionsAndAnswers, string $essence): void
         }
     }
 
-    endGame($userName);
+    line("Congratulations, %s!", $userName);
 }

@@ -8,7 +8,7 @@ use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_PROGRESSION = 'What number is missing in the progression?';
 
-function brainProgressionGame(): void
+function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {

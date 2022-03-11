@@ -9,7 +9,7 @@ use const Php\Project\Lvl1\Engine\ROUNDS;
 const
     ESSENCE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function brainPrimeGame(): void
+function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {

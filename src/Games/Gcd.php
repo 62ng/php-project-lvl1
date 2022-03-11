@@ -8,7 +8,7 @@ use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_GCD = 'Find the greatest common divisor of given numbers.';
 
-function brainGCDGame(): void
+function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {

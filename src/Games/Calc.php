@@ -8,7 +8,7 @@ use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_CALC = 'What is the result of the expression?';
 
-function brainCalcGame(): void
+function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {

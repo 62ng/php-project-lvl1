@@ -8,7 +8,7 @@ use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_EVEN = 'Answer "yes" if the number is even, otherwiseanswer "no".';
 
-function brainEvenGame(): void
+function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {

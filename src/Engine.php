@@ -7,14 +7,6 @@ use function cli\prompt;
 
 const ROUNDS = 3;
 
-function randomNum(): int
-{
-    $startRange = 1;
-    $endRange = 10;
-
-    return rand($startRange, $endRange);
-}
-
 function checkRound(string $userName, string $userAnswer, string $correctAnswer): bool
 {
     if ($userAnswer === $correctAnswer) {
@@ -43,7 +35,7 @@ function startGame(array $questionsAndAnswers, string $essence): void
 
         line("Question: %s", $roundQuestion);
         $userAnswer = prompt('Your answer');
-    
+
         $result = checkRound($userName, $userAnswer, $correctAnswer);
         if (!$result) {
             return;

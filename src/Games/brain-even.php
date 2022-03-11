@@ -3,7 +3,6 @@
 namespace Brain\Even;
 
 use function Brain\Engine\startGame;
-use function Brain\Engine\randomNum;
 
 use const Brain\Engine\ROUNDS;
 
@@ -13,7 +12,7 @@ function brainEvenGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        $randomNum = randomNum();
+        $randomNum = rand(1, 100);
 
         $questionsAndAnswers [] = [
             "{$randomNum}",

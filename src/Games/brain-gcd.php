@@ -3,7 +3,6 @@
 namespace Brain\Gcd;
 
 use function Brain\Engine\startGame;
-use function Brain\Engine\randomNum;
 
 use const Brain\Engine\ROUNDS;
 
@@ -13,8 +12,8 @@ function brainGCDGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        $randomNum1 = randomNum();
-        $randomNum2 = randomNum();
+        $randomNum1 = rand(1, 100);
+        $randomNum2 = rand(1, 100);
 
         $questionsAndAnswers [] = [
             "{$randomNum1} {$randomNum2}",

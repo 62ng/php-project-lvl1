@@ -3,7 +3,6 @@
 namespace Brain\Calc;
 
 use function Brain\Engine\startGame;
-use function Brain\Engine\randomNum;
 
 use const Brain\Engine\ROUNDS;
 
@@ -14,8 +13,8 @@ function brainCalcGame(): void
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
         $operations = ['+', '-', '*'];
-        $randomNum1 = randomNum();
-        $randomNum2 = randomNum();
+        $randomNum1 = rand(1, 10);
+        $randomNum2 = rand(1, 10);
         $randomOperationKey = array_rand($operations, 1);
         $randomOperation = $operations[$randomOperationKey];
 

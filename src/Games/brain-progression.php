@@ -3,7 +3,6 @@
 namespace Brain\Progression;
 
 use function Brain\Engine\startGame;
-use function Brain\Engine\randomNum;
 
 use const Brain\Engine\ROUNDS;
 
@@ -20,9 +19,9 @@ function brainProgressionGame(): void
         // random number of elements in progression
         $pElementsNum = rand($pElementsMinNum, $pElementsMaxNum);
         // random start number of the first element in progression
-        $pStartNum = randomNum();
+        $pStartNum = rand(1, 50);
         // random delta of progression
-        $pDelta = randomNum();
+        $pDelta = rand(1, 10);
 
         // array with progression elements
         $progression = getProgression($pElementsNum, $pStartNum, $pDelta);

@@ -18,8 +18,10 @@ function runGame(): void
             $progressionMinNumOfElements,
             $progressionMaxNumOfElements
         );
-        $progressionFirstElement = rand(1, 50);
-        $progressionDelta = rand(1, 10);
+        $randomFrom = 1;
+        $randomTo = 100;
+        $progressionFirstElement = rand($randomFrom, $randomTo);
+        $progressionDelta = rand($randomFrom, $randomTo);
 
         $progressionElements = getProgression(
             $progressionNumOfElements,

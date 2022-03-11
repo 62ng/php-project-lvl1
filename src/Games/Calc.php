@@ -13,8 +13,10 @@ function runGame(): void
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
         $operations = ['+', '-', '*'];
-        $randomNum1 = rand(1, 10);
-        $randomNum2 = rand(1, 10);
+        $randomFrom = 1;
+        $randomTo = 10;
+        $randomNum1 = rand($randomFrom, $randomTo);
+        $randomNum2 = rand($randomFrom, $randomTo);
         $randomOperationKey = array_rand($operations, 1);
         $randomOperation = $operations[$randomOperationKey];
 

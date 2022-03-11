@@ -13,7 +13,9 @@ function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        $randomNum = rand(1, 100);
+        $randomFrom = 1;
+        $randomTo = 100;
+        $randomNum = rand($randomFrom, $randomTo);
 
         $questionsAndAnswers [] = [
             "{$randomNum}",

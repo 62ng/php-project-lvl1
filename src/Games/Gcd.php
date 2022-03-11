@@ -12,8 +12,10 @@ function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        $randomNum1 = rand(1, 100);
-        $randomNum2 = rand(1, 100);
+        $randomFrom = 1;
+        $randomTo = 100;
+        $randomNum1 = rand($randomFrom, $randomTo);
+        $randomNum2 = rand($randomFrom, $randomTo);
 
         $questionsAndAnswers [] = [
             "{$randomNum1} {$randomNum2}",
@@ -27,12 +29,12 @@ function runGame(): void
 function getGCD(int $num1, int $num2): string
 {
     $minNum = min($num1, $num2);
-    $result = 1;
+    $gcd = 1;
     for ($i = 1; $i <= $minNum; $i++) {
         if ((($num1 % $i) == 0) && (($num2 % $i) == 0)) {
-            $result = $i;
+            $gcd = $i;
         }
     }
 
-    return $result;
+    return $gcd;
 }

@@ -12,30 +12,32 @@ function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        // minimum number of elements in progression
-        $pElementsMinNum = 6;
-        // maximum number of elements in progression
-        $pElementsMaxNum = 12;
-        // random number of elements in progression
-        $pElementsNum = rand($pElementsMinNum, $pElementsMaxNum);
-        // random start number of the first element in progression
-        $pStartNum = rand(1, 50);
-        // random delta of progression
-        $pDelta = rand(1, 10);
+        $progressionMinNumOfElements = 6;
+        $progressionMaxNumOfElements = 12;
+        $progressionNumOfElements = rand(
+            $progressionMinNumOfElements,
+            $progressionMaxNumOfElements
+        );
+        $progressionFirstElement = rand(1, 50);
+        $progressionDelta = rand(1, 10);
 
-        // array with progression elements
-        $progression = getProgression($pElementsNum, $pStartNum, $pDelta);
-        // random index of missed element in progression array
-        $pMissedElementIndex = rand(0, $pElementsNum - 1);
-        // missed element of progression
-        $correctAnswer = (string) $progression[$pMissedElementIndex];
+        $progressionElements = getProgression(
+            $progressionNumOfElements,
+            $progressionFirstElement,
+            $progressionDelta
+        );
 
-        $progressionToQuestion = $progression;
-        $progressionToQuestion[$pMissedElementIndex] = '..';
-        $pQuestionString = implode(' ', $progressionToQuestion);
+        $progressionMissedElementIndex = rand(0, $progressionNumOfElements - 1);
+        $correctAnswer = (string) $progressionElements[
+            $progressionMissedElementIndex
+        ];
+
+        $progressionToQuestion = $progressionElements;
+        $progressionToQuestion[$progressionMissedElementIndex] = '..';
+        $progressionQuestionString = implode(' ', $progressionToQuestion);
 
         $questionsAndAnswers [] = [
-            "{$pQuestionString}",
+            "{$progressionQuestionString}",
             $correctAnswer
         ];
     }
@@ -43,11 +45,11 @@ function runGame(): void
     startGame($questionsAndAnswers, ESSENCE_PROGRESSION);
 }
 
-function getProgression(int $elementsNum, int $startNum, int $delta): array
+function getProgression(int $elementsNum, int $firstElement, int $delta): array
 {
     $result = [];
     for (
-        $i = 0, $element = $startNum;
+        $i = 0, $element = $firstElement;
         $i < $elementsNum;
         $i++, $element += $delta
     ) {

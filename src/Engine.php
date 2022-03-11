@@ -15,12 +15,6 @@ function randomNum(): int
     return rand($startRange, $endRange);
 }
 
-function getAnswer(string $question): string
-{
-    line("Question: %s", $question);
-    return prompt('Your answer');
-}
-
 function checkRound(string $userName, string $userAnswer, string $correctAnswer): bool
 {
     if ($userAnswer === $correctAnswer) {
@@ -46,8 +40,10 @@ function startGame(array $questionsAndAnswers, string $essence): void
 
     for ($i = 0; $i < ROUNDS; $i++) {
         [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];
-        $userAnswer = getAnswer($roundQuestion);
 
+        line("Question: %s", $roundQuestion);
+        $userAnswer = prompt('Your answer');
+    
         $result = checkRound($userName, $userAnswer, $correctAnswer);
         if (!$result) {
             return;

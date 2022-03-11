@@ -16,14 +16,14 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum}",
-            getCorrectAnswer($randomNum)
+            isEven($randomNum) ? 'yes' : 'no'
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_EVEN);
 }
 
-function getCorrectAnswer(int $randomNum): string
+function isEven(int $num): bool
 {
-    return (($randomNum % 2) === 0) ? 'yes' : 'no';
+    return (($num % 2) === 0);
 }

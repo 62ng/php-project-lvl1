@@ -17,14 +17,14 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum1} {$randomNum2}",
-            correctAnswer($randomNum1, $randomNum2)
+            getCorrectAnswer($randomNum1, $randomNum2)
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_GCD);
 }
 
-function correctAnswer(int $num1, int $num2): string
+function getCorrectAnswer(int $num1, int $num2): string
 {
     $minNum = min($num1, $num2);
     $result = 1;

@@ -20,14 +20,14 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum1} {$randomOperation} {$randomNum2}",
-            correctAnswer($randomOperation, $randomNum1, $randomNum2)
+            getCorrectAnswer($randomOperation, $randomNum1, $randomNum2)
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_CALC);
 }
 
-function correctAnswer(string $operation, int $num1, int $num2): string
+function getCorrectAnswer(string $operation, int $num1, int $num2): string
 {
     switch ($operation) {
         case '+':

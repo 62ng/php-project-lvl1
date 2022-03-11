@@ -17,14 +17,14 @@ function runGame(): void
 
         $questionsAndAnswers [] = [
             "{$randomNum}",
-            correctAnswer($randomNum) ? 'yes' : 'no'
+            getCorrectAnswer($randomNum) ? 'yes' : 'no'
         ];
     }
 
     startGame($questionsAndAnswers, ESSENCE_PRIME);
 }
 
-function correctAnswer(int $num): bool
+function getCorrectAnswer(int $num): bool
 {
     if ($num < 2) {
         return false;

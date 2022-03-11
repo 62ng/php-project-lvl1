@@ -28,7 +28,7 @@ function startGame(array $questionsAndAnswers, string $essence): void
     line('Welcome to the Brain Games!');
     $userName = prompt('May I have your name?');
     line("Hello, %s!", $userName);
-    line($essens);
+    line($essence);
 
     for ($i = 0; $i < ROUNDS; $i++) {
         [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];

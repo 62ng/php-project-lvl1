@@ -14,9 +14,7 @@ function startGame(array $questionsAndAnswers, string $essence): void
     line("Hello, %s!", $userName);
     line($essence);
 
-    for ($i = 0; $i < ROUNDS; $i++) {
-        [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];
-
+    foreach ($questionsAndAnswers as [$roundQuestion, $correctAnswer]) {
         line("Question: %s", $roundQuestion);
         $userAnswer = prompt('Your answer');
 

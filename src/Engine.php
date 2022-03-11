@@ -7,16 +7,6 @@ use function cli\prompt;
 
 const ROUNDS = 3;
 
-function welcome(string $essens): string
-{
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line($essens);
-
-    return $name;
-}
-
 function randomNum(): int
 {
     $startRange = 1;
@@ -49,7 +39,10 @@ function checkRound(string $userName, string $userAnswer, string $correctAnswer)
 
 function startGame(array $questionsAndAnswers, string $essence): void
 {
-    $userName = welcome($essence);
+    line('Welcome to the Brain Games!');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
+    line($essens);
 
     for ($i = 0; $i < ROUNDS; $i++) {
         [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];

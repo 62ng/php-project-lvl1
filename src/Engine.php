@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const ROUNDS = 3;
 
-function getUserName(string $essens): string
+function welcome(string $essens): string
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -54,7 +54,7 @@ function endGame(string $userName): void
 
 function startGame(array $questionsAndAnswers, string $essence): void
 {
-    $userName = getUserName($essence);
+    $userName = welcome($essence);
 
     for ($i = 0; $i < ROUNDS; $i++) {
         [$roundQuestion, $correctAnswer] = $questionsAndAnswers[$i];

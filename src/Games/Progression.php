@@ -1,10 +1,10 @@
 <?php
 
-namespace Brain\Progression;
+namespace Php\Project\Lvl1\Progression;
 
-use function Brain\Engine\startGame;
+use function Php\Project\Lvl1\Engine\startGame;
 
-use const Brain\Engine\ROUNDS;
+use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_PROGRESSION = 'What number is missing in the progression?';
 

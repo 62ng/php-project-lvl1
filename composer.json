@@ -17,11 +17,11 @@
 		"files": [
 			"src/Cli.php",
 			"src/Engine.php",
-			"src/Games/BrainCalc.php",
-			"src/Games/BrainEven.php",
-			"src/Games/BrainGCD.php",
-			"src/Games/BrainPrime.php",
-			"src/Games/BrainProgression.php"
+			"src/Games/Calc.php",
+			"src/Games/Even.php",
+			"src/Games/Gcd.php",
+			"src/Games/Prime.php",
+			"src/Games/Progression.php"
 		]
 	},
     "require": {

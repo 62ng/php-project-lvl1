@@ -1,10 +1,10 @@
 <?php
 
-namespace Brain\Calc;
+namespace Php\Project\Lvl1\Calc;
 
-use function Brain\Engine\startGame;
+use function Php\Project\Lvl1\Engine\startGame;
 
-use const Brain\Engine\ROUNDS;
+use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_CALC = 'What is the result of the expression?';
 

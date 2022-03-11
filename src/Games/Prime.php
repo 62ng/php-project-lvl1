@@ -1,10 +1,10 @@
 <?php
 
-namespace Brain\Prime;
+namespace BrainPhp\Project\Lvl1\Prime;
 
-use function Brain\Engine\startGame;
+use function Php\Project\Lvl1\Engine\startGame;
 
-use const Brain\Engine\ROUNDS;
+use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const
     ESSENCE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';

@@ -1,10 +1,10 @@
 <?php
 
-namespace Brain\Even;
+namespace Php\Project\Lvl1\Even;
 
-use function Brain\Engine\startGame;
+use function Php\Project\Lvl1\Engine\startGame;
 
-use const Brain\Engine\ROUNDS;
+use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_EVEN = 'Answer "yes" if the number is even, otherwiseanswer "no".';
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Brain\Gcd;
+namespace Php\Project\Lvl1\Gcd;
 
-use function Brain\Engine\startGame;
+use function Php\Project\Lvl1\Engine\startGame;
 
-use const Brain\Engine\ROUNDS;
+use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const ESSENCE_GCD = 'Find the greatest common divisor of given numbers.';
 

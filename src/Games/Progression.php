@@ -12,36 +12,25 @@ function runGame(): void
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS; $i++) {
-        $progressionMinNumOfElements = 6;
-        $progressionMaxNumOfElements = 12;
-        $progressionNumOfElements = rand(
-            $progressionMinNumOfElements,
-            $progressionMaxNumOfElements
-        );
+        $numOfElementsFrom = 6;
+        $numOfElementsTo = 12;
+        $numOfElements = rand($numOfElementsFrom, $numOfElementsTo);
+
         $randomFrom = 1;
         $randomTo = 100;
-        $progressionFirstElement = rand($randomFrom, $randomTo);
-        $progressionDelta = rand($randomFrom, $randomTo);
+        $firstElement = rand($randomFrom, $randomTo);
+        $delta = rand($randomFrom, $randomTo);
 
-        $progressionElements = getProgression(
-            $progressionNumOfElements,
-            $progressionFirstElement,
-            $progressionDelta
-        );
+        $progression = getProgression($numOfElements, $firstElement, $delta);
 
-        $progressionMissedElementIndex = rand(0, $progressionNumOfElements - 1);
-        $correctAnswer = (string) $progressionElements[
-            $progressionMissedElementIndex
-        ];
+        $missedElement = rand(0, $numOfElements - 1);
+        $correctAnswer = (string) $progression[$missedElement];
 
-        $progressionToQuestion = $progressionElements;
-        $progressionToQuestion[$progressionMissedElementIndex] = '..';
+        $progressionToQuestion = $progression;
+        $progressionToQuestion[$missedElement] = '..';
         $progressionQuestionString = implode(' ', $progressionToQuestion);
 
-        $questionsAndAnswers [] = [
-            "{$progressionQuestionString}",
-            $correctAnswer
-        ];
+        $questionsAndAnswers[] = ["{$progressionQuestionString}", $correctAnswer];
     }
 
     startGame($questionsAndAnswers, ESSENCE_PROGRESSION);
@@ -49,14 +38,14 @@ function runGame(): void
 
 function getProgression(int $elementsNum, int $firstElement, int $delta): array
 {
-    $result = [];
+    $progression = [];
     for (
         $i = 0, $element = $firstElement;
         $i < $elementsNum;
         $i++, $element += $delta
     ) {
-        $result[] = $element;
+        $progression[] = $element;
     }
 
-    return $result;
+    return $progression;
 }

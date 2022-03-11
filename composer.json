@@ -12,7 +12,7 @@
     "prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"Php\\Package\\": "src"
+			"Php\\Project\\Lvl1\\": "src"
 		},
 		"files": [
 			"src/Cli.php",

@@ -26,11 +26,10 @@ function runGame(): void
         $missedElement = rand(0, $numOfElements - 1);
         $correctAnswer = (string) $progression[$missedElement];
 
-        $progressionToQuestion = $progression;
-        $progressionToQuestion[$missedElement] = '..';
-        $progressionQuestionString = implode(' ', $progressionToQuestion);
+        $progression[$missedElement] = '..';
+        $question = implode(' ', $progression);
 
-        $questionsAndAnswers[] = ["{$progressionQuestionString}", $correctAnswer];
+        $questionsAndAnswers[] = ["{$question}", $correctAnswer];
     }
 
     startGame($questionsAndAnswers, ESSENCE);

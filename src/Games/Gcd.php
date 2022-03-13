@@ -6,7 +6,7 @@ use function Php\Project\Lvl1\Engine\startGame;
 
 use const Php\Project\Lvl1\Engine\ROUNDS;
 
-const ESSENCE_GCD = 'Find the greatest common divisor of given numbers.';
+const ESSENCE = 'Find the greatest common divisor of given numbers.';
 
 function runGame(): void
 {
@@ -23,7 +23,7 @@ function runGame(): void
         ];
     }
 
-    startGame($questionsAndAnswers, ESSENCE_GCD);
+    startGame($questionsAndAnswers, ESSENCE);
 }
 
 function getGCD(int $num1, int $num2): string

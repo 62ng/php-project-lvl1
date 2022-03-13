@@ -7,7 +7,7 @@ use function Php\Project\Lvl1\Engine\startGame;
 use const Php\Project\Lvl1\Engine\ROUNDS;
 
 const
-    ESSENCE_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    ESSENCE = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function runGame(): void
 {
@@ -23,7 +23,7 @@ function runGame(): void
         ];
     }
 
-    startGame($questionsAndAnswers, ESSENCE_PRIME);
+    startGame($questionsAndAnswers, ESSENCE);
 }
 
 function isPrime(int $num): bool

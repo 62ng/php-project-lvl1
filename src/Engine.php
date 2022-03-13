@@ -27,7 +27,7 @@ function startGame(array $questionsAndAnswers, string $essence): void
             line("Let's try again, %s!", $userName);
             return;
         }
-    
+
         line("Correct!");
     }
 

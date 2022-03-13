@@ -18,9 +18,7 @@ function startGame(array $questionsAndAnswers, string $essence): void
         line("Question: %s", $roundQuestion);
         $userAnswer = prompt('Your answer');
 
-        if ($userAnswer === $correctAnswer) {
-            line("Correct!");
-        } else {
+        if ($userAnswer !== $correctAnswer) {
             line(
                 "'%s' is wrong answer ;(. Correct answer was '%s'.",
                 $userAnswer,
@@ -29,6 +27,8 @@ function startGame(array $questionsAndAnswers, string $essence): void
             line("Let's try again, %s!", $userName);
             return;
         }
+        
+        line("Correct!");
     }
 
     line("Congratulations, %s!", $userName);

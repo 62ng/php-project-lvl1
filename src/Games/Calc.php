@@ -17,7 +17,7 @@ function runGame(): void
         $randomTo = 10;
         $randomNum1 = rand($randomFrom, $randomTo);
         $randomNum2 = rand($randomFrom, $randomTo);
-        $randomOperationKey = array_rand($operations, 1);
+        $randomOperationKey = array_rand($operations);
         $randomOperation = $operations[$randomOperationKey];
 
         $questionsAndAnswers [] = [

@@ -8,7 +8,7 @@ First project in Hexlet - The Brain Games.
 ## Requirements
 
  * PHP >= 7.4  
- * [link](https://github.com/wp-cli/php-cli-tools)
+ * [wp-cli/php-cli-tools](https://github.com/wp-cli/php-cli-tools)
 
 ## Setup
 

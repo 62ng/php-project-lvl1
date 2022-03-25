@@ -17,7 +17,7 @@ function runGame(): void
         $randomNum = rand($randomFrom, $randomTo);
 
         $questionsAndAnswers [] = [
-            "{$randomNum}",
+            $randomNum,
             isEven($randomNum) ? 'yes' : 'no'
         ];
     }

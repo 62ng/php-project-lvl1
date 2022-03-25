@@ -29,7 +29,7 @@ function runGame(): void
         $progression[$missedElement] = '..';
         $question = implode(' ', $progression);
 
-        $questionsAndAnswers[] = ["{$question}", $correctAnswer];
+        $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
     startGame($questionsAndAnswers, ESSENCE);

@@ -18,7 +18,7 @@ function runGame(): void
         $randomNum = rand($randomFrom, $randomTo);
 
         $questionsAndAnswers [] = [
-            "{$randomNum}",
+            $randomNum,
             isPrime($randomNum) ? 'yes' : 'no'
         ];
     }

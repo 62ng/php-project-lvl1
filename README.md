@@ -3,12 +3,39 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3affd9d40113d99051f4/maintainability)](https://codeclimate.com/github/62ng/php-project-lvl1/maintainability)
 [![Actions Status](https://github.com/62ng/php-project-lvl1/workflows/linter-check/badge.svg)](https://github.com/62ng/php-project-lvl1/actions)
 
+First project in Hexlet - The Brain Games.
+
+## Minimum requirements
+
+PHP 7.4 and above
+wp-cli/php-cli-tools
+
 ## Setup
 
 ```sh
 $ git clone git@github.com:62ng/php-project-lvl1.git
 
 $ make install
+```
+## Run Even Game
+```sh
+make brain-even
+```
+## Run Calc Game
+```sh
+make brain-calc
+```
+## Run GCD Game
+```sh
+make brain-gcd
+```
+## Run Progression Game
+```sh
+make brain-progression
+```
+## Run Prime Game
+```sh
+make brain-prime
 ```
 
 ## Asciinemas

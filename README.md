@@ -5,10 +5,10 @@
 
 First project in Hexlet - The Brain Games.
 
-## Minimum requirements
+## Requirements
 
-PHP 7.4 and above
-wp-cli/php-cli-tools
+ * PHP >= 7.4  
+ * [link](https://github.com/wp-cli/php-cli-tools)
 
 ## Setup
 

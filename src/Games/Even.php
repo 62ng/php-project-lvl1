@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Project\Lvl1\Even;
+namespace Php\Project\Lvl1\Games\Even;
 
 use function Php\Project\Lvl1\Engine\startGame;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Project\Lvl1\Progression;
+namespace Php\Project\Lvl1\Games\Progression;
 
 use function Php\Project\Lvl1\Engine\startGame;
 

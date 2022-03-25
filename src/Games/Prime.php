@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Project\Lvl1\Prime;
+namespace Php\Project\Lvl1\Games\Prime;
 
 use function Php\Project\Lvl1\Engine\startGame;
 

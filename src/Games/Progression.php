@@ -6,7 +6,7 @@ use function Php\Project\Lvl1\Engine\startGame;
 
 use const Php\Project\Lvl1\Engine\ROUNDS;
 
-const ESSENCE = 'What number is missing in the progression?';
+const DESCRIPTION = 'What number is missing in the progression?';
 
 function runGame(): void
 {
@@ -32,7 +32,7 @@ function runGame(): void
         $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    startGame($questionsAndAnswers, ESSENCE);
+    startGame($questionsAndAnswers, DESCRIPTION);
 }
 
 function getProgression(int $elementsNum, int $firstElement, int $delta): array

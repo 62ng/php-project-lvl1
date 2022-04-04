@@ -6,7 +6,7 @@ use function Php\Project\Lvl1\Engine\startGame;
 
 use const Php\Project\Lvl1\Engine\ROUNDS;
 
-const ESSENCE = 'Answer "yes" if the number is even, otherwiseanswer "no".';
+const DESCRIPTION = 'Answer "yes" if the number is even, otherwiseanswer "no".';
 
 function runGame(): void
 {
@@ -22,7 +22,7 @@ function runGame(): void
         ];
     }
 
-    startGame($questionsAndAnswers, ESSENCE);
+    startGame($questionsAndAnswers, DESCRIPTION);
 }
 
 function isEven(int $num): bool

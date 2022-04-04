@@ -6,7 +6,7 @@ use function Php\Project\Lvl1\Engine\startGame;
 
 use const Php\Project\Lvl1\Engine\ROUNDS;
 
-const ESSENCE = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 
 function runGame(): void
 {
@@ -26,7 +26,7 @@ function runGame(): void
         ];
     }
 
-    startGame($questionsAndAnswers, ESSENCE);
+    startGame($questionsAndAnswers, DESCRIPTION);
 }
 
 function getOperationValue(string $operation, int $num1, int $num2): string
